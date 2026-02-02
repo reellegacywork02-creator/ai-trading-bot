@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trading Bot - Automate Your Profits</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'golden': '#FFD700',
+                        'royal-blue': '#4169E1',
+                        'dark-bg': '#0F0F0F',
+                        'dark-card': '#1A1A1A',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg text-white font-sans">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full bg-dark-card shadow-lg z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-golden text-2xl font-bold">AI Trading Bot</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#features" class="text-white hover:text-golden px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                        <a href="#pricing" class="text-white hover:text-golden px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
+                        <a href="#contact" class="text-white hover:text-golden px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-golden focus:outline-none focus:text-golden">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-dark-card">
+                <a href="#features" class="text-white hover:text-golden block px-3 py-2 rounded-md text-base font-medium">Features</a>
+                <a href="#pricing" class="text-white hover:text-golden block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+                <a href="#contact" class="text-white hover:text-golden block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-16 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-dark-bg to-dark-card">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-8">
+                Automate Your Profits with <span class="text-golden">AI Trading</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+                Harness the power of artificial intelligence to trade smarter, faster, and more profitably. Start your journey to financial freedom today.
+            </p>
+            <a href="#pricing" class="inline-block bg-royal-blue hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300">
+                Get Started
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-bg">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">Why Choose Our Trading Bot?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-dark-card p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-golden text-6xl mb-4">⏰</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">24/7 Trading</h3>
+                    <p class="text-gray-300">Never miss an opportunity. Our bot trades around the clock, ensuring you maximize your profits even while you sleep.</p>
+                </div>
+                <div class="bg-dark-card p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-golden text-6xl mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">90% Accuracy</h3>
+                    <p class="text-gray-300">Powered by advanced AI algorithms, our bot achieves an impressive 90% accuracy rate in predicting market trends.</p>
+                </div>
+                <div class="bg-dark-card p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-golden text-6xl mb-4">🔒</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Secure Connection</h3>
+                    <p class="text-gray-300">Your data and investments are protected with top-tier encryption and secure API connections to trusted exchanges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-card">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">Choose Your Plan</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-dark-bg p-8 rounded-lg shadow-lg text-center border border-gray-700">
+                    <h3 class="text-2xl font-semibold text-white mb-4">Basic</h3>
+                    <p class="text-4xl font-bold text-golden mb-4">$99<span class="text-lg">/month</span></p>
+                    <ul class="text-gray-300 mb-6">
+                        <li>Access to 1 trading strategy</li>
+                        <li>Basic analytics</li>
+                        <li>Email support</li>
+                    </ul>
+                    <button class="bg-royal-blue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Buy Now</button>
+                </div>
+                <div class="bg-dark-bg p-8 rounded-lg shadow-lg text-center border-2 border-golden">
+                    <h3 class="text-2xl font-semibold text-white mb-4">Pro</h3>
+                    <p class="text-4xl font-bold text-golden mb-4">$299<span class="text-lg">/month</span></p>
+                    <ul class="text-gray-300 mb-6">
+                        <li>Access to 5 trading strategies</li>
+                        <li>Advanced analytics & reporting</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="bg-golden hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded-lg transition duration-300">Buy Now</button>
+                </div>
+                <div class="bg-dark-bg p-8 rounded-lg shadow-lg text-center border border-gray-700">
+                    <h3 class="text-2xl font-semibold text-white mb-4">Premium</h3>
+                    <p class="text-4xl font-bold text-golden mb-4">$499<span class="text-lg">/month</span></p>
+                    <ul class="text-gray-300 mb-6">
+                        <li>Unlimited trading strategies</li>
+                        <li>Real-time alerts & custom bots</li>
+                        <li>24/7 dedicated support</li>
+                    </ul>
+                    <button class="bg-royal-blue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-bg">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">Contact Us</h2>
+            <form class="bg-dark-card p-8 rounded-lg shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-golden" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-golden" required>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-golden" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-royal-blue hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-card py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-gray-400">&copy; 2023 AI Trading Bot. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
