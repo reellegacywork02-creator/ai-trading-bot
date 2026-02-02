@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trading Bot - Automate Your Profits</title>
+    <meta name="description" content="Automate your trading profits with AI Trading Bot. 24/7 smart trading, secure connection, and multiple strategies.">
+    <meta name="keywords" content="AI Trading, Trading Bot, Automated Trading, Cryptocurrency, Forex Trading">
+    <meta name="author" content="Reel Legacy">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'golden': '#FFD700',
+                        'royal-blue': '#4169E1',
+                        'dark-bg': '#0F0F0F',
+                        'dark-card': '#1A1A1A',
+                        'whatsapp-green': '#25D366'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg text-white font-sans">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full bg-dark-card shadow-lg z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0">
+        <a href="#" class="text-golden text-2xl font-bold">AI Trading Bot</a>
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          <a href="#features" class="text-white hover:text-golden px-3 py-2 rounded-md text-sm font-medium">Features</a>
+          <a href="#pricing" class="text-white hover:text-golden px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
+          <a href="#contact" class="text-white hover:text-golden px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+          <a href="#disclaimer" class="text-white hover:text-golden px-3 py-2 rounded-md text-sm font-medium">Disclaimer</a>
+        </div>
+      </div>
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-white hover:text-golden focus:outline-none focus:text-golden">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-dark-card">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-golden">Features</a>
+      <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-golden">Pricing</a>
+      <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-golden">Contact</a>
+      <a href="#disclaimer" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-golden">Disclaimer</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="pt-20 pb-32 px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-r from-dark-bg to-dark-card">
+  <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">Automate Your Profits with <span class="text-golden">AI Trading</span></h1>
+  <p class="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-10">Trade smarter, faster, and securely. Harness AI for 24/7 automated trading across multiple strategies.</p>
+  <div class="space-x-4">
+    <a href="#pricing" class="inline-block bg-royal-blue hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300">Get Started</a>
+    <a href="#contact" class="inline-block bg-golden hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg text-lg transition duration-300">Contact Us</a>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-20 px-4 sm:px-6 lg:px-8">
+  <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">Why Choose Our Trading Bot?</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    <div class="bg-dark-card p-8 rounded-lg shadow-lg text-center hover:scale-105 transform transition duration-300">
+      <div class="text-golden text-6xl mb-4">⏰</div>
+      <h3 class="text-xl font-semibold text-white mb-2">24/7 Trading</h3>
+      <p class="text-gray-300">Our bot trades around the clock, ensuring you never miss opportunities and maximize profits.</p>
+    </div>
+    <div class="bg-dark-card p-8 rounded-lg shadow-lg text-center hover:scale-105 transform transition duration-300">
+      <div class="text-golden text-6xl mb-4">🎯</div>
+      <h3 class="text-xl font-semibold text-white mb-2">High Accuracy</h3>
+      <p class="text-gray-300">AI-powered algorithms provide precise market predictions with a strong track record of success.</p>
+    </div>
+    <div class="bg-dark-card p-8 rounded-lg shadow-lg text-center hover:scale-105 transform transition duration-300">
+      <div class="text-golden text-6xl mb-4">🔒</div>
+      <h3 class="text-xl font-semibold text-white mb-2">Secure Connection</h3>
+      <p class="text-gray-300">Top-tier encryption and secure API connections protect your data and investments.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section with Stripe Checkout -->
+<section id="pricing" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-card">
+  <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">Choose Your Plan</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+    <!-- Basic Plan -->
+    <div class="bg-dark-bg p-8 rounded-lg shadow-lg text-center border border-gray-700 hover:scale-105 transform transition duration-300">
+      <h3 class="text-2xl font-semibold text-white mb-4">Basic</h3>
+      <p class="text-4xl font-bold text-golden mb-4">$99<span class="text-lg">/month</span></p>
+      <ul class="text-gray-300 mb-6 space-y-1">
+        <li>1 trading strategy</li>
+        <li>Basic analytics</li>
+        <li>Email support</li>
+      </ul>
+      <button id="checkout-basic" class="bg-royal-blue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Buy with Stripe</button>
+    </div>
+
+    <!-- Pro Plan -->
+    <div class="bg-dark-bg p-8 rounded-lg shadow-lg text-center border-2 border-golden hover:scale-105 transform transition duration-300">
+      <h3 class="text-2xl font-semibold text-white mb-4">Pro</h3>
+      <p class="text-4xl font-bold text-golden mb-4">$299<span class="text-lg">/month</span></p>
+      <ul class="text-gray-300 mb-6 space-y-1">
+        <li>5 trading strategies</li>
+        <li>Advanced analytics & reporting</li>
+        <li>Priority support</li>
+      </ul>
+      <button id="checkout-pro" class="bg-golden hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded-lg transition duration-300">Buy with Stripe</button>
+    </div>
+
+    <!-- Premium Plan -->
+    <div class="bg-dark-bg p-8 rounded-lg shadow-lg text-center border border-gray-700 hover:scale-105 transform transition duration-300">
+      <h3 class="text-2xl font-semibold text-white mb-4">Premium</h3>
+      <p class="text-4xl font-bold text-golden mb-4">$499<span class="text-lg">/month</span></p>
+      <ul class="text-gray-300 mb-6 space-y-1">
+        <li>Unlimited strategies</li>
+        <li>Real-time alerts & custom bots</li>
+        <li>24/7 dedicated support</li>
+      </ul>
+      <button id="checkout-premium" class="bg-royal-blue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Buy with Stripe</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 px-4 sm:px-6 lg:px-8">
+  <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">Contact Us</h2>
+  <div class="max-w-4xl mx-auto">
+    <form action="https://formsubmit.co/aj5223686@gmail.com" method="POST" class="bg-dark-card p-8 rounded-lg shadow-lg">
+      <input type="hidden" name="_subject" value="New AI Trading Bot Inquiry">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+          <input type="text" id="name" name="name" class="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-golden" required>
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+          <input type="email" id="email" name="email" class="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-golden" required>
+        </div>
+      </div>
+      <div class="mb-6">
+        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+        <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-golden" required></textarea>
+      </div>
+      <button type="submit" class="w-full bg-royal-blue hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Disclaimer Section -->
+<section id="disclaimer" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-bg">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Trading Legal Disclaimer</h2>
+    <p class="text-gray-300 text-lg">
+      Trading cryptocurrencies or forex involves substantial risk. Past performance is not indicative of future results. 
+      Use this bot at your own risk. We are not responsible for financial losses.
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark-card py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto text-center">
+    <p class="text-gray-400">&copy; 2026 AI Trading Bot. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/923195994312" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 14px 18px; border-radius: 50px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 9999; text-decoration: none;">💬 WhatsApp</a>
+
+<!-- Mobile Menu Script -->
+<script>
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
+
+// Stripe Checkout Example
+const stripe = Stripe('pk_test_51HxxxxxxReplaceWithYourKey'); // Replace with your publishable key
+
+document.getElementById('checkout-basic').addEventListener('click', () => {
+  stripe.redirectToCheckout({ sessionId: 'price_1BasicPriceID' });
+});
+document.getElementById('checkout-pro').addEventListener('click', () => {
+  stripe.redirectToCheckout({ sessionId: 'price_1ProPriceID' });
+});
+document.getElementById('checkout-premium').addEventListener('click', () => {
+  stripe.redirectToCheckout({ sessionId: 'price_1PremiumPriceID' });
+});
+</script>
+
+</body>
+</html>
